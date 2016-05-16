@@ -1,3 +1,2 @@
 # ReversiGamewithJavaFX
-This Project is the Reversi Game with JavaFX. It made for 
-programming technologies 
+This Project is the Reversi Game with JavaFX. It was made for the programming technologies course.
