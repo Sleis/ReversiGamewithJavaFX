@@ -16,9 +16,7 @@
  */
 package Model;
 
-import com.sun.org.apache.xerces.internal.dom.NodeImpl;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -65,11 +63,9 @@ public class XMLManagerDaoImpTest {
 
     /**
      * Test of readPlayers method, of class XMLManagerDaoImp.
-     *
-     * @throws org.xml.sax.SAXException
      */
     @Test
-    public void testReadPlayers() throws SAXException {
+    public void testReadPlayers() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
         instance.createPlayers(p);
         Player test = new Player("Dani", 10);
