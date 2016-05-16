@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="682.0" prefWidth="617.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeSceneController">
+   <children>
+      <Label layoutX="132.0" layoutY="36.0" text="Welcome to the game" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="playGame" graphicTextGap="0.0" layoutX="218.0" layoutY="169.0" mnemonicParsing="false" onAction="#handlePlayGame" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" text="Play Game"/>
+      <Button fx:id="highscore" layoutX="218.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleHighscore" prefHeight="50.0" prefWidth="200.0" text="Highscore" />
+      <Button fx:id="help" layoutX="218.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleHelp" prefHeight="50.0" prefWidth="200.0" text="Help" />
+      <Button fx:id="quit" layoutX="218.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="50.0" prefWidth="200.0" text="Quit" />
+   </children>
+</AnchorPane>

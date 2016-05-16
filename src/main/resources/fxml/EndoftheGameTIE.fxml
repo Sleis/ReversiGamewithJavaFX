@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="682.0" prefWidth="617.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EndoftheGameController">
+   <children>
+      <Label layoutX="247.0" layoutY="231.0" text="It is TIE" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="198.0" layoutY="389.0" text="Points:" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPoints" layoutX="309.0" layoutY="389.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="65.0" text="Congratulation!" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonMenu" layoutX="279.0" layoutY="621.0" mnemonicParsing="false" onAction="#handleMenu" style="-fx-background-color: black; -fx-border-color: white;" text="Menu" textFill="WHITE" />
+   </children>
+</AnchorPane>

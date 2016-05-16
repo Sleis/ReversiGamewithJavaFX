@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="682.0" prefWidth="617.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HelpController">
+   <children>
+      <Label alignment="CENTER" layoutX="271.0" layoutY="25.0" text="Help" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="401.0" text="How to count the points:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="80.0" layoutY="450.0" text="Number of your circles + empty places" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="25.0" layoutY="92.0" text="The game description: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonBack" layoutX="314.0" layoutY="619.0" mnemonicParsing="false" onAction="#handleBackHelp" style="-fx-background-color: black; -fx-border-color: white;" text="Back" textFill="WHITE" />
+      <Label layoutX="82.0" layoutY="163.0" text="uncheckered board. There are sixty-four identical game pieces called" textFill="WHITE" />
+      <Label layoutX="77.0" layoutY="225.0" text=" the other. Players take turns placing disks on the board  with their" textFill="WHITE" />
+      <Label layoutX="83.0" layoutY="290.0" text="color that are in a straight line and bounded by the disk just placed" textFill="WHITE" />
+      <Label layoutX="82.0" layoutY="320.0" text="and another disk of the current player's color are turned over to " textFill="WHITE" />
+      <Label layoutX="80.0" layoutY="197.0" text="disks (often spelled &quot;discs&quot;), which are light on one side and dark on" textFill="WHITE" />
+      <Label layoutX="82.0" layoutY="129.0" text="Reversi is a strategy board game for two players, played on an 8×8 " textFill="WHITE" />
+      <Label layoutX="82.0" layoutY="255.0" text="assigned color facing up. During a play, any disks of the opponent's" textFill="WHITE" />
+      <Label layoutX="82.0" layoutY="358.0" text="the current player's color." textFill="WHITE" />
+   </children>
+</AnchorPane>

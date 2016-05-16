@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="682.0" prefWidth="617.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameController">
+    <children>
+        <GridPane layoutX="60.0" layoutY="117.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: green;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <StackPane fx:id="stackPane0_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" />
+                <StackPane fx:id="stackPane0_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" />
+                <StackPane fx:id="stackPane0_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" />
+                <StackPane fx:id="stackPane0_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" />
+                <StackPane fx:id="stackPane0_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" />
+                <StackPane fx:id="stackPane0_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" />
+                <StackPane fx:id="stackPane0_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" />
+                <StackPane fx:id="stackPane0_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" />
+                
+                
+                <StackPane fx:id="stackPane1_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <StackPane fx:id="stackPane1_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            
+            
+                <StackPane fx:id="stackPane2_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                <StackPane fx:id="stackPane2_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            
+            
+                <StackPane fx:id="stackPane3_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="3" />
+                <StackPane fx:id="stackPane3_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <StackPane fx:id="stackPane3_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <StackPane fx:id="stackPane3_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="DODGERBLUE" radius="20.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: black;" />
+               </children></StackPane>
+                <StackPane fx:id="stackPane3_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="DODGERBLUE" radius="20.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white;" />
+               </children></StackPane>
+                <StackPane fx:id="stackPane3_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                <StackPane fx:id="stackPane3_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                <StackPane fx:id="stackPane3_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            
+                      
+                <StackPane fx:id="stackPane4_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="4" />
+                <StackPane fx:id="stackPane4_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <StackPane fx:id="stackPane4_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <StackPane fx:id="stackPane4_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="DODGERBLUE" radius="20.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white;" />
+               </children></StackPane>
+                <StackPane fx:id="stackPane4_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="DODGERBLUE" radius="20.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: black;" />
+               </children></StackPane>
+                <StackPane fx:id="stackPane4_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                <StackPane fx:id="stackPane4_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                <StackPane fx:id="stackPane4_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="4" />            
+                      
+            
+                <StackPane fx:id="stackPane5_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                <StackPane fx:id="stackPane5_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="5" />            
+                      
+            
+                <StackPane fx:id="stackPane6_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                <StackPane fx:id="stackPane6_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                        
+                      
+                <StackPane fx:id="stackPane7_0" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_1" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_2" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_3" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_4" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_5" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_6" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                <StackPane fx:id="stackPane7_7" onMouseClicked="#handleClickAction" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            </children>
+        </GridPane>
+      <Label layoutX="309.0" layoutY="71.0" text="Number of black circle:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="71.0" text="Number of white circle:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="blackNumber" layoutX="521.0" layoutY="71.0" text="2" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="whiteNumber" layoutX="273.0" layoutY="71.0" text="2" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="14.0" text="Next player:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="whosNext" layoutX="310.0" layoutY="14.0" text="White" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="error" alignment="TOP_LEFT" layoutX="60.0" layoutY="628.0" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonMenuGame" layoutX="278.0" layoutY="628.0" mnemonicParsing="false" onAction="#handleMenuGame" style="-fx-background-color: black; -fx-border-color: white;" text="Menu" textFill="WHITE" />
+    </children>
+</AnchorPane>
