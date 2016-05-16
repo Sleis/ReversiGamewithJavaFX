@@ -144,6 +144,11 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.5.1</version>
+            </plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.6.201602180812</version>
@@ -159,7 +164,7 @@
                         <phase>site</phase>
                         <goals>
                             <goal>report</goal>
-                        </goals>
+                        </goals>                       
                     </execution>
                 </executions>
             </plugin>
