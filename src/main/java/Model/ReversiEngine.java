@@ -21,65 +21,124 @@ package Model;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * A játék motorjának osztálya. A játékhoz tartozó összes funkciót tartalmazza.
  *
  * @author Iványi Dániel
  */
 public class ReversiEngine {
 
     private static Logger logger = LoggerFactory.getLogger(ReversiEngine.class);
-
+    /**
+     * A játéknak a felhasználók számára szánt üzenete.
+     */
     private String message;
+    /**
+     * A játékban a fekete és fehér körök számát tárolja.
+     */
     private int[] BlackAndWhite;
+    /**
+     *Tárolja, hogy a játéknak vége van-e.
+     */
     private boolean isEnd;
+    /**
+     *A játékban a következő játékos.
+     */
     private int nextPlayer;
-
+    
+    /**
+     * Létrehoz egy <code>ReversiEngine</code> objektumot.
+     */
     public ReversiEngine() {
     }
-
+    /**
+     * Létrehoz egy <code>ReversiEngine</code> objektumot az adott paraméterű tulajdonságokkal.
+     * 
+     * @param message a játéknak a felhasználó számára szánt üzenete
+     * @param BlackAndWhite a fekete és fehér körök száma
+     * @param isEnd vége van-e a játéknak
+     * @param nextPlayer következő játék
+     */
     public ReversiEngine(String message, int[] BlackAndWhite, boolean isEnd, int nextPlayer) {
         this.message = message;
         this.BlackAndWhite = BlackAndWhite;
         this.isEnd = isEnd;
         this.nextPlayer = nextPlayer;
     }
-
+    /**
+     * Visszaadja a fekete és fehér körök számát. 
+     * 
+     * @return fekete és fehér körök száma
+     */
     public int[] getBlackAndWhite() {
         return BlackAndWhite;
     }
-
+    
+    /**
+     * Visszaadja, hogy vége van-e a játéknak.
+     * 
+     * @return játéknak vége van-e
+     */
     public boolean isIsEnd() {
         return isEnd;
     }
-
+    
+    /**
+     * Visszaadja a játéknak a felhasználó felé szánt üzenetét.
+     * 
+     * @return a játék üzenet a felhasználó felé
+     */
     public String getMessage() {
         return message;
     }
-
+    
+    /**
+     * Visszaadja a következő játékos számát.
+     * 
+     * @return a következő játékos  
+     */
     public int getNextPlayer() {
         return nextPlayer;
     }
-
+    
+    /**
+     * Beállítja a fekete és fehér körök számát.
+     * 
+     * @param BlackAndWhite fekete és fehér körök száma
+     */
     public void setBlackAndWhite(int[] BlackAndWhite) {
         this.BlackAndWhite = BlackAndWhite;
     }
-
+    
+    /**
+     * Beállítja, hogy vége van-e a játéknak.
+     * 
+     * @param isEnd a játéknak vége van-e
+     */
     public void setIsEnd(boolean isEnd) {
         this.isEnd = isEnd;
     }
-
+    
+    /**
+     * Beállítja a játéknak a felhasználó számára szánt üzenetet.
+     * 
+     * @param message a játék üzenete a felhasználó számára
+     */
     public void setMessage(String message) {
         this.message = message;
     }
-
+    /**
+     * Beállítja a következő játékost.
+     * 
+     * @param nextPlayer következő játékos
+     */
     public void setNextPlayer(int nextPlayer) {
         this.nextPlayer = nextPlayer;
     }
-
+    
     public boolean right(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
         int whereWasIt = -1;
