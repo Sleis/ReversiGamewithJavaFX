@@ -107,11 +107,12 @@ public class EndoftheGameController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    
+    @SuppressWarnings("javadocmethod")
     public void initWinner(String whosWinner) {
         labelWinner.setText(whosWinner);
     }
-
+    @SuppressWarnings("javadocmethod")
     public void initPoints(int points) {
         labelPoints.setText(Integer.toString(points));
     }
