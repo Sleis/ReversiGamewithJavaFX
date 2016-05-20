@@ -41,22 +41,24 @@ public class ReversiEngine {
      */
     private int[] BlackAndWhite;
     /**
-     *Tárolja, hogy a játéknak vége van-e.
+     * Tárolja, hogy a játéknak vége van-e.
      */
     private boolean isEnd;
     /**
-     *A játékban a következő játékos.
+     * A játékban a következő játékos.
      */
     private int nextPlayer;
-    
+
     /**
      * Létrehoz egy <code>ReversiEngine</code> objektumot.
      */
     public ReversiEngine() {
     }
+
     /**
-     * Létrehoz egy <code>ReversiEngine</code> objektumot az adott paraméterű tulajdonságokkal.
-     * 
+     * Létrehoz egy <code>ReversiEngine</code> objektumot az adott paraméterű
+     * tulajdonságokkal.
+     *
      * @param message a játéknak a felhasználó számára szánt üzenete
      * @param BlackAndWhite a fekete és fehér körök száma
      * @param isEnd vége van-e a játéknak
@@ -68,77 +70,79 @@ public class ReversiEngine {
         this.isEnd = isEnd;
         this.nextPlayer = nextPlayer;
     }
+
     /**
-     * Visszaadja a fekete és fehér körök számát. 
-     * 
+     * Visszaadja a fekete és fehér körök számát.
+     *
      * @return fekete és fehér körök száma
      */
     public int[] getBlackAndWhite() {
         return BlackAndWhite;
     }
-    
+
     /**
      * Visszaadja, hogy vége van-e a játéknak.
-     * 
+     *
      * @return játéknak vége van-e
      */
     public boolean isIsEnd() {
         return isEnd;
     }
-    
+
     /**
      * Visszaadja a játéknak a felhasználó felé szánt üzenetét.
-     * 
+     *
      * @return a játék üzenet a felhasználó felé
      */
     public String getMessage() {
         return message;
     }
-    
+
     /**
      * Visszaadja a következő játékos számát.
-     * 
-     * @return a következő játékos  
+     *
+     * @return a következő játékos
      */
     public int getNextPlayer() {
         return nextPlayer;
     }
-    
+
     /**
      * Beállítja a fekete és fehér körök számát.
-     * 
+     *
      * @param BlackAndWhite fekete és fehér körök száma
      */
     public void setBlackAndWhite(int[] BlackAndWhite) {
         this.BlackAndWhite = BlackAndWhite;
     }
-    
+
     /**
      * Beállítja, hogy vége van-e a játéknak.
-     * 
+     *
      * @param isEnd a játéknak vége van-e
      */
     public void setIsEnd(boolean isEnd) {
         this.isEnd = isEnd;
     }
-    
+
     /**
      * Beállítja a játéknak a felhasználó számára szánt üzenetet.
-     * 
+     *
      * @param message a játék üzenete a felhasználó számára
      */
     public void setMessage(String message) {
         this.message = message;
     }
+
     /**
      * Beállítja a következő játékost.
-     * 
+     *
      * @param nextPlayer következő játékos
      */
     public void setNextPlayer(int nextPlayer) {
         this.nextPlayer = nextPlayer;
     }
-    
+
     public boolean right(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
         int whereWasIt = -1;
@@ -404,6 +408,20 @@ public class ReversiEngine {
         return true;
     }
 
+    /**
+     * Leellenörzi, hogy az adott <code>index</code> pozícióból nézve, az összes
+     * irányt tekintve szabályos lépés-e, ha ide rakunk kört. Ha legalább egy
+     * irányba nézve szabályos lépés ide rakni a kört, akkor igazat ad vissza,
+     * egyébként hamisat.
+     *
+     * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     * @param index a pozició, ahova akarjuk rakni a körünket
+     * @param color a soron következő játékos és az ellenfél szine
+     * @param isCheck csak ellenörzés, hogy van-e szabad lépés vagy normális
+     * játék, ahol változtatunk a játékban
+     * @return igaz, ha szabályos lépés oda rakni, egyébként hamis
+     */
     public boolean[] checkallway(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean[] tmp = new boolean[8];
         if (index.getOszlop() != 7) {
@@ -433,6 +451,12 @@ public class ReversiEngine {
         return tmp;
     }
 
+    /**
+     * Beállítja a <code>replacement</code> összes elemét hamisra.
+     *
+     * @param replacement boolean tömb
+     * @return tömb, aminek az összes eleme hamis
+     */
     public boolean[] allNull(boolean[] replacement) {
         for (int i = 0; i < replacement.length; i++) {
             replacement[i] = false;
@@ -440,10 +464,30 @@ public class ReversiEngine {
         return replacement;
     }
 
+    /**
+     * Leellenörzi, hogy a <code>replacement</code> tömbben van-e igaz érték.
+     *
+     * @param replacement tömb, ami tárolja, hogy melyik irányra nézve volt
+     * szabályos lépés
+     *
+     * @return igaz, ha volt szabályos lépés, egyébként hamis
+     */
     public boolean isreplacement(boolean[] replacement) {
         return replacement[0] || replacement[1] || replacement[2] || replacement[3] || replacement[4] || replacement[5] || replacement[6] || replacement[7];
     }
 
+    /**
+     * Leellenörzi, hogy a játéknak vége van-e az alpaján, hogy tele van-e a
+     * tábla vagy van-e még szabályos lépés. Összesen 64 hely van, végig megyünk
+     * az összes cellán, ha az adott cellában van kör vagy az adott helyre nem
+     * szabályos tenni, akkor növeljük a változót. Ha a változó a végén 64,
+     * akkor vége van és igazat ad vissza, egyébként hamisat.
+     *
+     * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     * @param color a soron következő játékos és az ellenfél szine
+     * @return igaz, ha vége van egyébként hamis
+     */
     public boolean isEnd(Cell[][] all, PlayerColor color) {
         boolean[] replacement = new boolean[8];
         int counter = 0;
@@ -466,12 +510,26 @@ public class ReversiEngine {
         return counter == 64;
     }
 
+    /**
+     * Leellenörzi, hogy a <code>cell</code> cellában van-e kör, ha van igaz,
+     * egyébként hamis.
+     *
+     * @param cell egy cella a pályából
+     * @return igaz, ha foglalt egybként hamis
+     */
     public boolean isBusy(Cell cell) {
         return !cell.getColor().equals("");
     }
 
+    /**
+     * Beállítja a <code>color</code> paramétert, hogy a soron következő
+     * játékosnak mi a szine és az ellenfélnek mi a szine.
+     *
+     * @param color amine a szinét állítjuk át
+     * @param whoNext megadja, hogy ki a következő
+     */
     public void colorOption(PlayerColor color, int whoNext) {
-        if (whoNext % 2 == 0) {
+        if (whoNext == 0) {
             color.setYourColor("white");
             color.setEnemyColor("black");
         } else {
@@ -480,6 +538,15 @@ public class ReversiEngine {
         }
     }
 
+    /**
+     * Megszámolja és visszaadja, hogy összesen hány fekete és fehér kör van a
+     * pályán.
+     *
+     * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @return visszaadja, hogy mennyi fekete és fehér kör van
+     */
     public int[] howManyBlackAndWhite(Cell[][] allCell) {
         int[] color = new int[2];
         for (int i = 0; i < 8; i++) {
@@ -495,6 +562,14 @@ public class ReversiEngine {
         return color;
     }
 
+    /**
+     * Kiszámolja, hogy ki a következő az alapján, hogy hány kör van a pályán.
+     *
+     * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @return a következő játákos száma
+     */
     public int whosNext(Cell[][] allCell) {
         int whosNextTmp = 0;
         for (int i = 0; i < 8; i++) {
@@ -504,9 +579,18 @@ public class ReversiEngine {
                 }
             }
         }
-        return whosNextTmp;
+        return whosNextTmp % 2;
     }
 
+    /**
+     * Kiszámolja, hogy ki a győztes az alapján, hogy kinek hány körje van a
+     * pályán.
+     *
+     * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @return a győztes játékos szine
+     */
     public String whosWinner(Cell[][] allCell) {
         String whosWinnerTmp;
         int[] whosWon = howManyBlackAndWhite(allCell);
@@ -520,6 +604,15 @@ public class ReversiEngine {
         return whosWinnerTmp;
     }
 
+    /**
+     * Kiszámolja, hogy a győztesnek hány pontja van. Pont számítása:
+     * összeshely(64) - ellenfél pontszáma.
+     *
+     * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     * 
+     * @return a győztes pontszáma
+     */
     public int winnersPoints(Cell[][] allCell) {
         int tmp;
         String winner = whosWinner(allCell);
@@ -531,7 +624,11 @@ public class ReversiEngine {
         }
         return tmp;
     }
-
+    /**
+     * 
+     * @param allCell
+     * @param index 
+     */
     public void run(Cell[][] allCell, Position index) {
         logger.info("A run függvény meghívódott");
         PlayerColor color = new PlayerColor();
@@ -555,7 +652,7 @@ public class ReversiEngine {
 
             allNull(replacement);
 
-            colorOption(otherColor, this.nextPlayer);
+            colorOption(otherColor, this.nextPlayer % 2);
 
             this.isEnd = isEnd(allCell, otherColor);
 
