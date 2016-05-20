@@ -40,7 +40,6 @@ public class Cell {
      */
     
     public Cell() {
-        this.color = "";
     }
     
     /**
