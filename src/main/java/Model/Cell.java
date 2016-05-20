@@ -44,7 +44,7 @@ public class Cell {
     }
     
     /**
-     * Létrehoz egy <code>Cell</code> objektumot adott szinű tulajdonsággal.
+     * Létrehoz egy <code>Cell</code> objektumot <code>color</code> tulajdonsággal.
      * @param color az objektum <code>color</code> tulajdonsága
      */
     public Cell(String color) {
