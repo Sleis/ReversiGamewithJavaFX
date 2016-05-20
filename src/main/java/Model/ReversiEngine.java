@@ -412,7 +412,15 @@ public class ReversiEngine {
      * Leellenörzi, hogy az adott <code>index</code> pozícióból nézve, az összes
      * irányt tekintve szabályos lépés-e, ha ide rakunk kört. Ha legalább egy
      * irányba nézve szabályos lépés ide rakni a kört, akkor igazat ad vissza,
-     * egyébként hamisat.
+     * egyébként hamisat.Az ellenörzés a {@link ReversiEngine#down(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)} ,
+     * {@link ReversiEngine#up(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
+     * {@link ReversiEngine#right(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
+     * {@link ReversiEngine#left(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
+     * {@link ReversiEngine#downandleft(Model.Cell[][], Model.Position, Model.PlayerColor, boolean),
+     * {@link ReversiEngine#downandright(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
+     * {@link ReversiEngine#upandleft(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)}
+     * és
+     * {@link ReversiEngine#upandright(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)} metódusok segítségével történik.
      *
      * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
      * szinű kör van
@@ -478,8 +486,9 @@ public class ReversiEngine {
 
     /**
      * Leellenörzi, hogy a játéknak vége van-e az alpaján, hogy tele van-e a
-     * tábla vagy van-e még szabályos lépés. Összesen 64 hely van, végig megyünk
-     * az összes cellán, ha az adott cellában van kör vagy az adott helyre nem
+     * tábla vagy van-e még szabályos lépés. A szabályos lépés ellenörzése a {@link ReversiEngine#checkallway(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)
+     * } metódus segítségével történik. Összesen 64 hely van, végig megyünk az
+     * összes cellán, ha az adott cellában van kör vagy az adott helyre nem
      * szabályos tenni, akkor növeljük a változót. Ha a változó a végén 64,
      * akkor vége van és igazat ad vissza, egyébként hamisat.
      *
@@ -583,9 +592,10 @@ public class ReversiEngine {
     }
 
     /**
-     * Kiszámolja, hogy ki a győztes az alapján, hogy kinek hány körje van a pályán, amit
-     * a {@link ReversiEngine#howManyBlackAndWhite(Model.Cell[][]) } metódus
-     * segítségével történik.
+     * Kiszámolja, hogy ki a győztes az alapján, hogy kinek hány körje van a
+     * pályán, amit a {@link ReversiEngine#howManyBlackAndWhite(Model.Cell[][])
+     * } metódus segítségével történik.
+     *
      * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
      * szinű kör van
      *
@@ -662,7 +672,7 @@ public class ReversiEngine {
             replacement = checkallway(allCell, index, color, false);
             if (isreplacement(replacement)) {
                 allCell[index.getSor()][index.getOszlop()].setColor(color.getYourColor());
-                this.nextPlayer=(this.nextPlayer+1)%2;
+                this.nextPlayer = (this.nextPlayer + 1) % 2;
             } else {
                 logger.info("Oda nem rakhatsz");
                 this.message = "You can not place there";
