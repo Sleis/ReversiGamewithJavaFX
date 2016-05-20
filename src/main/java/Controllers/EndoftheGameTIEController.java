@@ -62,7 +62,7 @@ public class EndoftheGameTIEController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
+    @SuppressWarnings("javadocmethod")
     public void initPoints(int points) {
         labelPoints.setText(Integer.toString(points));
     }
