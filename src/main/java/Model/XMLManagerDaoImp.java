@@ -45,6 +45,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
+ * Implementálja az XMLManagerDAO interfészt.
  *
  * @author Iványi Dániel
  */
@@ -64,7 +65,6 @@ public class XMLManagerDaoImp implements XMLManagerDao {
         }
 
     }
-
     @Override
     public void createPlayers(Path path) {
         try {
