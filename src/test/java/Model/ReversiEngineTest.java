@@ -515,7 +515,7 @@ public class ReversiEngineTest {
         }
         all[1][1].setColor("");
         ReversiEngine instance = new ReversiEngine();
-        assertEquals(63, instance.whosNext(all));
+        assertEquals(63%2, instance.whosNext(all));
     }
 
     /**
@@ -603,7 +603,7 @@ public class ReversiEngineTest {
         all[2][2].setColor("");
         all[4][4].setColor("black");
         instance.run(all, index);
-        assertEquals(64, instance.getNextPlayer());
+        assertEquals(64%2, instance.getNextPlayer());
 
     }
 
