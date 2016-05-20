@@ -24,25 +24,45 @@ package Model;
 
 
 /**
+ * A cellák típúsának osztálya
  *
  * @author Iványi Dániel
  */
 public class Cell {
-
+    
+    /**
+     * A cellához tartozó szint tárolja.
+     */
     private String color;
 
+    /**
+     * Létrehoz egy <code>Cell</code> objektumot üres <code>color</code> tulajdonsággal.
+     */
+    
     public Cell() {
         this.color = "";
     }
-
+    
+    /**
+     * Létrehoz egy <code>Cell</code> objektumot adott szinű tulajdonsággal.
+     * @param color az objektum <code>color</code> tulajdonsága
+     */
     public Cell(String color) {
         this.color = color;
     }
-
+    
+    /**
+     * Visszaadja az objektum <code>color</code> color tulajdonságát.
+     * @return az objektum <code>color</code> tulajdonsága
+     */
     public String getColor() {
         return color;
     }
-
+    /**
+     * Beállítja az objektum <code>color</code> tulajdonságát.
+     * @param color az objektum <code>color</code> tulajdonsága
+     */
+    
     public void setColor(String color) {
         this.color = color;
     }
