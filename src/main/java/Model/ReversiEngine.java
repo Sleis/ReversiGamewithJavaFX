@@ -160,7 +160,7 @@ public class ReversiEngine {
      * szinét kicseréli az aktuális játékos szinével megegyező szinre és
      * visszatér igaz értékkel. Ha az <code>isCheck</code> paraméter igaz, akkor
      * nem történik semmi, csak visszatér igaz értékkel. Ha az
-     * <code>isThere</code> változó hamis, akkor hamis értékkel vissaztér a
+     * <code>isThere</code> változó hamis, akkor hamis értékkel visszatér a
      * függvény.
      *
      * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
@@ -172,7 +172,7 @@ public class ReversiEngine {
      * végezni
      *
      * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
-     * pozícióba
+     * pozícióba, egyébként hamis
      */
     public boolean right(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
@@ -225,7 +225,7 @@ public class ReversiEngine {
      * szinét kicseréli az aktuális játékos szinével megegyező szinre és
      * visszatér igaz értékkel. Ha az <code>isCheck</code> paraméter igaz, akkor
      * nem történik semmi, csak visszatér igaz értékkel. Ha az
-     * <code>isThere</code> változó hamis, akkor hamis értékkel vissaztér a
+     * <code>isThere</code> változó hamis, akkor hamis értékkel visszatér a
      * függvény.
      *
      * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
@@ -237,7 +237,7 @@ public class ReversiEngine {
      * végezni
      *
      * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
-     * pozícióba
+     * pozícióba, egyébként hamis
      */
     public boolean up(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
@@ -289,7 +289,7 @@ public class ReversiEngine {
      * szinét kicseréli az aktuális játékos szinével megegyező szinre és
      * visszatér igaz értékkel. Ha az <code>isCheck</code> paraméter igaz, akkor
      * nem történik semmi, csak visszatér igaz értékkel. Ha az
-     * <code>isThere</code> változó hamis, akkor hamis értékkel vissaztér a
+     * <code>isThere</code> változó hamis, akkor hamis értékkel visszatér a
      * függvény.
      *
      * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
@@ -301,7 +301,7 @@ public class ReversiEngine {
      * végezni
      *
      * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
-     * pozícióba
+     * pozícióba, egyébként hamis
      */
     public boolean down(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
@@ -344,7 +344,7 @@ public class ReversiEngine {
      * <code>index</code> poziciótól balra lévő cellákon, ameddig nem talál vagy
      * üres vagy a soron következő játékossal megegyező szinű kört. Ha üres
      * cellát talált, akkor visszatér hamis értékkel, ha megfelelő szinű kört
-     * talált, akkor megjegyzi az adott sorszámot a <code>whereWasIt</code>
+     * talált, akkor megjegyzi az adott oszlopszámot a <code>whereWasIt</code>
      * változóban és eltárol igaz értéket az <code>isThere</code> változóban. Ha
      * az <code>isThere</code> változó igaz, akkor megnézi, hogy
      * <code>isCheck</code> paraméter igaz-e, ha hamis, akkor végig megy a
@@ -353,7 +353,7 @@ public class ReversiEngine {
      * szinét kicseréli az aktuális játékos szinével megegyező szinre és
      * visszatér igaz értékkel. Ha az <code>isCheck</code> paraméter igaz, akkor
      * nem történik semmi, csak visszatér igaz értékkel. Ha az
-     * <code>isThere</code> változó hamis, akkor hamis értékkel vissaztér a
+     * <code>isThere</code> változó hamis, akkor hamis értékkel visszatér a
      * függvény.
      *
      * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
@@ -365,7 +365,7 @@ public class ReversiEngine {
      * végezni
      *
      * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
-     * pozícióba
+     * pozícióba, egyébként hamis
      */
     public boolean left(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
@@ -400,6 +400,37 @@ public class ReversiEngine {
         return true;
     }
 
+    /**
+     * Megnézi, hogy a <code>index</code> pozíciótól nézve balfelső átlóban az
+     * első cella üres-e, ha üres, akkor visszatér hamis értékkel. Ha igaz,
+     * akkor megnézi, hogy ugyanebben a cellában az ellenfél szinével megegyező
+     * szinű kör van-e. Ha nem, akkor visszatér hamis értékkel, egyébként végig
+     * megy a <code>index</code> poziciótól balfelső átlóban lévő cellákon,
+     * ameddig nem talál vagy üres vagy a soron következő játékossal megegyező
+     * szinű kört. Ha üres cellát talált, akkor visszatér hamis értékkel, ha
+     * megfelelő szinű kört talált, akkor megjegyzi az adott sorszámot a
+     * <code>whereWasIt</code> változóban és eltárol igaz értéket az
+     * <code>isThere</code> változóban. Ha az <code>isThere</code> változó igaz,
+     * akkor megnézi, hogy <code>isCheck</code> paraméter igaz-e, ha hamis,
+     * akkor végig megy a <code>index</code> pozíciótól balfelfele lévő átlón
+     * addig amíg nem éri el <code>whereWasIt</code> változóban tárolt sorszámot
+     * és az összes kör szinét kicseréli az aktuális játékos szinével megegyező
+     * szinre és visszatér igaz értékkel. Ha az <code>isCheck</code> paraméter
+     * igaz, akkor nem történik semmi, csak visszatér igaz értékkel. Ha az
+     * <code>isThere</code> változó hamis, akkor hamis értékkel visszatér a
+     * függvény.
+     *
+     * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @param index a pozíció, ahova kört akarunk rakni
+     * @param color a soron következő játékos és az ellenfél játékos szine
+     * @param isCheck megmondja, hogy ellenörzünk vagy szinváltást is fogunk
+     * végezni
+     *
+     * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
+     * pozícióba, egyébként hamis
+     */
     public boolean upandleft(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
         int whereWasIt = -1;
@@ -433,6 +464,37 @@ public class ReversiEngine {
         return true;
     }
 
+    /**
+     * Megnézi, hogy a <code>index</code> pozíciótól nézve jobbfelső átlóban az
+     * első cella üres-e, ha üres, akkor visszatér hamis értékkel. Ha igaz,
+     * akkor megnézi, hogy ugyanebben a cellában az ellenfél szinével megegyező
+     * szinű kör van-e. Ha nem, akkor visszatér hamis értékkel, egyébként végig
+     * megy a <code>index</code> poziciótól jobbfelső átlóban lévő cellákon,
+     * ameddig nem talál vagy üres vagy a soron következő játékossal megegyező
+     * szinű kört. Ha üres cellát talált, akkor visszatér hamis értékkel, ha
+     * megfelelő szinű kört talált, akkor megjegyzi az adott sorszámot a
+     * <code>whereWasIt</code> változóban és eltárol igaz értéket az
+     * <code>isThere</code> változóban. Ha az <code>isThere</code> változó igaz,
+     * akkor megnézi, hogy <code>isCheck</code> paraméter igaz-e, ha hamis,
+     * akkor végig megy a <code>index</code> pozíciótól jobbfelfele lévő átlón
+     * addig amíg nem éri el <code>whereWasIt</code> változóban tárolt sorszámot
+     * és az összes kör szinét kicseréli az aktuális játékos szinével megegyező
+     * szinre és visszatér igaz értékkel. Ha az <code>isCheck</code> paraméter
+     * igaz, akkor nem történik semmi, csak visszatér igaz értékkel. Ha az
+     * <code>isThere</code> változó hamis, akkor hamis értékkel visszatér a
+     * függvény.
+     *
+     * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @param index a pozíció, ahova kört akarunk rakni
+     * @param color a soron következő játékos és az ellenfél játékos szine
+     * @param isCheck megmondja, hogy ellenörzünk vagy szinváltást is fogunk
+     * végezni
+     *
+     * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
+     * pozícióba, egyébként hamis
+     */
     public boolean upandright(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
         int whereWasIt = -1;
@@ -466,6 +528,37 @@ public class ReversiEngine {
         return true;
     }
 
+    /**
+     * Megnézi, hogy a <code>index</code> pozíciótól nézve balalsó átlóban az
+     * első cella üres-e, ha üres, akkor visszatér hamis értékkel. Ha igaz,
+     * akkor megnézi, hogy ugyanebben a cellában az ellenfél szinével megegyező
+     * szinű kör van-e. Ha nem, akkor visszatér hamis értékkel, egyébként végig
+     * megy a <code>index</code> poziciótól balalsó átlóban lévő cellákon,
+     * ameddig nem talál vagy üres vagy a soron következő játékossal megegyező
+     * szinű kört. Ha üres cellát talált, akkor visszatér hamis értékkel, ha
+     * megfelelő szinű kört talált, akkor megjegyzi az adott oszlopszámot a
+     * <code>whereWasIt</code> változóban és eltárol igaz értéket az
+     * <code>isThere</code> változóban. Ha az <code>isThere</code> változó igaz,
+     * akkor megnézi, hogy <code>isCheck</code> paraméter igaz-e, ha hamis,
+     * akkor végig megy a <code>index</code> pozíciótól ballefele lévő átlón
+     * addig amíg nem éri el <code>whereWasIt</code> változóban tárolt
+     * oszlopszámot és az összes kör szinét kicseréli az aktuális játékos
+     * szinével megegyező szinre és visszatér igaz értékkel. Ha az
+     * <code>isCheck</code> paraméter igaz, akkor nem történik semmi, csak
+     * visszatér igaz értékkel. Ha az <code>isThere</code> változó hamis, akkor
+     * hamis értékkel visszatér a függvény.
+     *
+     * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @param index a pozíció, ahova kört akarunk rakni
+     * @param color a soron következő játékos és az ellenfél játékos szine
+     * @param isCheck megmondja, hogy ellenörzünk vagy szinváltást is fogunk
+     * végezni
+     *
+     * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
+     * pozícióba, egyébként hamis
+     */
     public boolean downandleft(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
         int whereWasIt = -1;
@@ -499,6 +592,37 @@ public class ReversiEngine {
         return true;
     }
 
+    /**
+     * Megnézi, hogy a <code>index</code> pozíciótól nézve jobbalsó átlóban az
+     * első cella üres-e, ha üres, akkor visszatér hamis értékkel. Ha igaz,
+     * akkor megnézi, hogy ugyanebben a cellában az ellenfél szinével megegyező
+     * szinű kör van-e. Ha nem, akkor visszatér hamis értékkel, egyébként végig
+     * megy a <code>index</code> poziciótól jobbalsó átlóban lévő cellákon,
+     * ameddig nem talál vagy üres vagy a soron következő játékossal megegyező
+     * szinű kört. Ha üres cellát talált, akkor visszatér hamis értékkel, ha
+     * megfelelő szinű kört talált, akkor megjegyzi az adott oszlopszámot a
+     * <code>whereWasIt</code> változóban és eltárol igaz értéket az
+     * <code>isThere</code> változóban. Ha az <code>isThere</code> változó igaz,
+     * akkor megnézi, hogy <code>isCheck</code> paraméter igaz-e, ha hamis,
+     * akkor végig megy a <code>index</code> pozíciótól jobblefele lévő átlón
+     * addig amíg nem éri el <code>whereWasIt</code> változóban tárolt
+     * oszlopszámot és az összes kör szinét kicseréli az aktuális játékos
+     * szinével megegyező szinre és visszatér igaz értékkel. Ha az
+     * <code>isCheck</code> paraméter igaz, akkor nem történik semmi, csak
+     * visszatér igaz értékkel. Ha az <code>isThere</code> változó hamis, akkor
+     * hamis értékkel visszatér a függvény.
+     *
+     * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @param index a pozíció, ahova kört akarunk rakni
+     * @param color a soron következő játékos és az ellenfél játékos szine
+     * @param isCheck megmondja, hogy ellenörzünk vagy szinváltást is fogunk
+     * végezni
+     *
+     * @return igaz, ha szabályos lépés kört rakni az <code>index</code>
+     * pozícióba, egyébként hamis
+     */
     public boolean downandright(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
         boolean isThere = false;
         int whereWasIt = -1;
@@ -540,11 +664,12 @@ public class ReversiEngine {
      * {@link ReversiEngine#up(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
      * {@link ReversiEngine#right(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
      * {@link ReversiEngine#left(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
-     * {@link ReversiEngine#downandleft(Model.Cell[][], Model.Position, Model.PlayerColor, boolean),
+     * {@link ReversiEngine#downandleft(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
      * {@link ReversiEngine#downandright(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)},
      * {@link ReversiEngine#upandleft(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)}
      * és
-     * {@link ReversiEngine#upandright(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)} metódusok segítségével történik.
+     * {@link ReversiEngine#upandright(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)}
+     * metódusok segítségével történik.
      *
      * @param all a játék pályája, ami tartalmazza melyik pozícióban, milyen
      * szinű kör van
