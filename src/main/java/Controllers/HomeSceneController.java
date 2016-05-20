@@ -54,7 +54,7 @@ public class HomeSceneController implements Initializable {
     @FXML
     private Button quit;
 
-    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+    private static Logger logger = LoggerFactory.getLogger(HomeSceneController.class);
 
     @FXML
     private void handlePlayGame(ActionEvent event) throws IOException {

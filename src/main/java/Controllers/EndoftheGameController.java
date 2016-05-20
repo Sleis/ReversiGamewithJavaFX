@@ -68,7 +68,7 @@ public class EndoftheGameController implements Initializable {
     private Label labelPoints;
 
     private final XMLManagerDao manager = new XMLManagerDaoImp();
-    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+    private static Logger logger = LoggerFactory.getLogger(EndoftheGameController.class);
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException {

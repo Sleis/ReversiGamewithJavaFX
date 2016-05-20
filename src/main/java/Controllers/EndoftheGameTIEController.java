@@ -51,7 +51,7 @@ public class EndoftheGameTIEController implements Initializable {
 
     @FXML
     private Button buttonMenu;
-    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+    private static Logger logger = LoggerFactory.getLogger(EndoftheGameTIEController.class);
 
     @FXML
     private void handleMenu(ActionEvent event) throws IOException {

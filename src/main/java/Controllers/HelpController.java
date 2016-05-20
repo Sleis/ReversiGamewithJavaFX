@@ -47,7 +47,7 @@ public class HelpController implements Initializable {
      */
     @FXML
     private Button buttonBack;
-    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+    private static Logger logger = LoggerFactory.getLogger(HelpController.class);
 
     @FXML
     private void handleBackHelp(ActionEvent event) throws IOException {
