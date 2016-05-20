@@ -21,10 +21,10 @@ package Model;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.annotation.Inherited;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +65,10 @@ public class XMLManagerDaoImp implements XMLManagerDao {
         }
 
     }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void createPlayers(Path path) {
         try {
@@ -84,6 +88,9 @@ public class XMLManagerDaoImp implements XMLManagerDao {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Element> readPlayers(Path path) {
         try {
@@ -104,12 +111,18 @@ public class XMLManagerDaoImp implements XMLManagerDao {
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Element> sortPlayersByScore(List<Element> list) {
         logger.info("Sorba lett rendezve a lista");
         return list.stream().sorted((t1, t2) -> Integer.parseInt(t2.getElementsByTagName("points").item(0).getTextContent()) - Integer.parseInt(t1.getElementsByTagName("points").item(0).getTextContent())).collect(Collectors.toList());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addNewPlayer(Path path, Player gamer) {
         try {
