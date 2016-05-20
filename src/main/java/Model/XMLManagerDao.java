@@ -26,7 +26,7 @@ import java.util.List;
 import org.w3c.dom.Element;
 
 /**
- * Az osztály az XML fájlon végezhető műveletek definiálja.
+ * Az osztály az XML fájlon végezhető műveleteket definiálja.
  *
  * @author Iványi Dániel
  */
