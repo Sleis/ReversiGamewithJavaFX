@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class ReversiEngine {
 

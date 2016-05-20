@@ -24,13 +24,12 @@ package Model;
 
 
 import java.time.LocalDate;
-import javafx.util.converter.LocalDateStringConverter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class PlayerTest {
 

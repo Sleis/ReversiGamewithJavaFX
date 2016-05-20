@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public interface XMLManagerDao {
 

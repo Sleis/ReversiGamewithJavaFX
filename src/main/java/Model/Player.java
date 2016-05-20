@@ -26,7 +26,7 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class Player {
     private String name;

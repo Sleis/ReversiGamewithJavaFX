@@ -37,7 +37,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class HelpController implements Initializable {
 

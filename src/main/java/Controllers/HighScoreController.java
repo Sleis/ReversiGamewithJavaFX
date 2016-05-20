@@ -52,7 +52,7 @@ import org.w3c.dom.Element;
 /**
  * FXML Controller class
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class HighScoreController implements Initializable {
 

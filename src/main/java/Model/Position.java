@@ -24,7 +24,7 @@ package Model;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class Position {
     private int sor;

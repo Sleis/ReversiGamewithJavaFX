@@ -28,7 +28,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class ReversiEngineTest {
 

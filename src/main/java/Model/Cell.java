@@ -25,7 +25,7 @@ package Model;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class Cell {
 

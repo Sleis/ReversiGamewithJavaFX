@@ -26,7 +26,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class PlayerColor {
     private String yourColor;

@@ -35,11 +35,10 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class XMLManagerDaoImpTest {
 

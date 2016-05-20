@@ -46,7 +46,7 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @author Sleis
+ * @author Iványi Dániel
  */
 public class XMLManagerDaoImp implements XMLManagerDao {
 
