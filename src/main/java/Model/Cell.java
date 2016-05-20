@@ -52,7 +52,7 @@ public class Cell {
     }
     
     /**
-     * Visszaadja az objektum <code>color</code> color tulajdonságát.
+     * Visszaadja az objektum <code>color</code> tulajdonságát.
      * @return az objektum <code>color</code> tulajdonsága
      */
     public String getColor() {
