@@ -662,7 +662,7 @@ public class ReversiEngine {
             replacement = checkallway(allCell, index, color, false);
             if (isreplacement(replacement)) {
                 allCell[index.getSor()][index.getOszlop()].setColor(color.getYourColor());
-                this.nextPlayer++;
+                this.nextPlayer=(this.nextPlayer+1)%2;
             } else {
                 logger.info("Oda nem rakhatsz");
                 this.message = "You can not place there";
@@ -670,7 +670,7 @@ public class ReversiEngine {
 
             allNull(replacement);
 
-            colorOption(otherColor, this.nextPlayer % 2);
+            colorOption(otherColor, this.nextPlayer);
 
             this.isEnd = isEnd(allCell, otherColor);
 
