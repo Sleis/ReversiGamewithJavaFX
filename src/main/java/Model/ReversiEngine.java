@@ -583,9 +583,9 @@ public class ReversiEngine {
     }
 
     /**
-     * Kiszámolja, hogy ki a győztes az alapján, hogy kinek hány körje van a
-     * pályán.
-     *
+     * Kiszámolja, hogy ki a győztes az alapján, hogy kinek hány körje van a pályán, amit
+     * a {@link ReversiEngine#howManyBlackAndWhite(Model.Cell[][]) } metódus
+     * segítségével történik.
      * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
      * szinű kör van
      *
@@ -610,12 +610,11 @@ public class ReversiEngine {
      *
      * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
      * szinű kör van
-     * 
+     *
      * @return a győztes pontszáma
      */
     public int winnersPoints(Cell[][] allCell) {
         int tmp;
-        String winner = whosWinner(allCell);
         int[] points = howManyBlackAndWhite(allCell);
         if (points[0] > points[1]) {
             tmp = 64 - points[1];
@@ -624,10 +623,29 @@ public class ReversiEngine {
         }
         return tmp;
     }
+
     /**
-     * 
-     * @param allCell
-     * @param index 
+     * A játék menetét hajtja végre. Elsőnek kiszámolja, ki a következő játékos
+     * a {@link ReversiEngine#whosNext(Model.Cell[][])} metódussal. Megnézi,
+     * hogy a <code>index</code> pozícióban van-e kör, ha van akkor beállítja
+     * {@link ReversiEngine#message} tulajdonságot, hogy a hely foglalt.Ha nem
+     * foglalt, akkor beállítja a <code>color</code> változót a megfelelően a {@link ReversiEngine#colorOption(Model.PlayerColor, int)
+     * } metódus segítségével. Azután leellenörzi, hogy szabályos lépés-e oda
+     * rakni a kört. Ha szabályos akkor, berakja az soron következő játékos
+     * szinével megegyező kört az <code>index</code> poícióba. Ha nem szabályos
+     * lépés oda rakni, akkor a {@link ReversiEngine#message} tulajdonságot
+     * beállítja, hogy oda nem lehet rakni. Majd beállítja a
+     * <code>otherColor</code> változót a megfelelően a {@link ReversiEngine#colorOption(Model.PlayerColor, int)
+     * } metódus segítségével és leellenörzi a {@link ReversiEngine#isEnd(Model.Cell[][], Model.PlayerColor)
+     * } metódus segítségével, hogy vége van-e a játéknak, ezt az értéket fogja
+     * tárolni a {@link ReversiEngine#isEnd} tulajdonsága az objektumnak.A végén
+     * pedig a {@link ReversiEngine#BlackAndWhite} tulajdonságban eltároljuk {@link ReversiEngine#howManyBlackAndWhite(Model.Cell[][])
+     * } metódus segítségével, hogy mennyi fekete és fehér kör van a pályán.
+     *
+     * @param allCell a játék pályája, ami tartalmazza melyik pozícióban, milyen
+     * szinű kör van
+     *
+     * @param index a pozíció, ahova rakni akarjuk a kört
      */
     public void run(Cell[][] allCell, Position index) {
         logger.info("A run függvény meghívódott");
