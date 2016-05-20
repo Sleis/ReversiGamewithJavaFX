@@ -349,7 +349,7 @@ public class GameController implements Initializable {
 
     @FXML
     private void handleClickAction(MouseEvent event) throws IOException {
-        logger.info("A GameController osztály handleClickAction metódusa meghívódott.");
+        logger.info("Klikkeltél egy cellára.");
 
         StackPane osszes[][];
         Cell[][] all;
@@ -405,7 +405,7 @@ public class GameController implements Initializable {
 
     @FXML
     private void handleMenuGame(ActionEvent event) throws IOException {
-        logger.info("A GameController osztály handleMenuGame metódusa meghívódott.");
+        logger.info("Rákattintottál a Menu gombra.");
         Stage stage;
         Parent root;
         stage = (Stage) buttonMenuGame.getScene().getWindow();

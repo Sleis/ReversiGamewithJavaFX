@@ -22,7 +22,7 @@ package Controllers;
  * #L%
  */
 
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -47,6 +47,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 /**
@@ -67,8 +69,12 @@ public class HighScoreController implements Initializable {
 
     private final XMLManagerDao manager = new XMLManagerDaoImp();
 
+    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+
     @FXML
     private void handleBack(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a Back gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) ButtonBack.getScene().getWindow();

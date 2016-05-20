@@ -21,7 +21,6 @@ package Controllers;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,6 +32,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
@@ -53,8 +54,12 @@ public class HomeSceneController implements Initializable {
     @FXML
     private Button quit;
 
+    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+
     @FXML
     private void handlePlayGame(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a Play gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) playGame.getScene().getWindow();
@@ -65,9 +70,11 @@ public class HomeSceneController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @FXML
     private void handleHighscore(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a HighScore gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) highscore.getScene().getWindow();
@@ -78,9 +85,11 @@ public class HomeSceneController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @FXML
     private void handleHelp(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a Help gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) help.getScene().getWindow();
@@ -94,8 +103,10 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handleQuit(ActionEvent event) {
+        logger.info("Rákatintottál a Quit gombra.");
+
         Stage stage = (Stage) quit.getScene().getWindow();
-        
+
         stage.close();
     }
 

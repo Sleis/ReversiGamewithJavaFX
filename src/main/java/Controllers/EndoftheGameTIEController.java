@@ -21,7 +21,6 @@ package Controllers;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +33,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
@@ -41,18 +42,21 @@ import javafx.stage.Stage;
  * @author Iványi Dániel
  */
 public class EndoftheGameTIEController implements Initializable {
-    
+
     /**
      * Initializes the controller class.
      */
     @FXML
     private Label labelPoints;
-    
+
     @FXML
     private Button buttonMenu;
-    
+    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
+
     @FXML
     private void handleMenu(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a Menu gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) buttonMenu.getScene().getWindow();
@@ -62,14 +66,16 @@ public class EndoftheGameTIEController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     @SuppressWarnings("javadocmethod")
     public void initPoints(int points) {
+        logger.debug("Inicializálodott a pontszám");
         labelPoints.setText(Integer.toString(points));
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

@@ -21,7 +21,6 @@ package Controllers;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,6 +32,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
@@ -46,9 +47,12 @@ public class HelpController implements Initializable {
      */
     @FXML
     private Button buttonBack;
+    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
 
     @FXML
     private void handleBackHelp(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a Back gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) buttonBack.getScene().getWindow();

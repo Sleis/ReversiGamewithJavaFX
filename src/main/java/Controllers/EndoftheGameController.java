@@ -21,7 +21,6 @@ package Controllers;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import Model.Player;
 import Model.XMLManagerDao;
 import Model.XMLManagerDaoImp;
@@ -40,6 +39,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * FXML Controller class
@@ -67,9 +68,11 @@ public class EndoftheGameController implements Initializable {
     private Label labelPoints;
 
     private final XMLManagerDao manager = new XMLManagerDaoImp();
+    private static Logger logger = LoggerFactory.getLogger(HighScoreController.class);
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál az OK gombra.");
 
         Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "players.xml");
         if (!p.toFile().isFile()) {
@@ -98,6 +101,8 @@ public class EndoftheGameController implements Initializable {
 
     @FXML
     private void handleMenu(ActionEvent event) throws IOException {
+        logger.info("Rákatintottál a Menü gombra.");
+
         Stage stage;
         Parent root;
         stage = (Stage) buttonMenu.getScene().getWindow();
@@ -107,13 +112,18 @@ public class EndoftheGameController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @SuppressWarnings("javadocmethod")
     public void initWinner(String whosWinner) {
+        logger.debug("Inicializálódott a győztes.");
+
         labelWinner.setText(whosWinner);
     }
+
     @SuppressWarnings("javadocmethod")
     public void initPoints(int points) {
+        logger.debug("Inicializálódott a pontszám.");
+
         labelPoints.setText(Integer.toString(points));
     }
 

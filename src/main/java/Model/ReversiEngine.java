@@ -907,7 +907,6 @@ public class ReversiEngine {
      * @param index a pozíció, ahova rakni akarjuk a kört
      */
     public void run(Cell[][] allCell, Position index) {
-        logger.info("A run függvény meghívódott");
         PlayerColor color = new PlayerColor();
         PlayerColor otherColor = new PlayerColor();
         boolean[] replacement = new boolean[8];

@@ -100,7 +100,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             for (int i = 0; i < nodeLista.getLength(); i++) {
                 elemek.add((Element) nodeLista.item(i));
             }
-            logger.info("Ki lett olvasva egy elem a listából");
+            logger.debug("Ki lett olvasva az összes elem az XML fájlból");
             return elemek;
 
         } catch (SAXException | IOException ex) {
@@ -115,7 +115,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
      */
     @Override
     public List<Element> sortPlayersByScore(List<Element> list) {
-        logger.info("Sorba lett rendezve a lista");
+        logger.debug("Sorba lett rendezve a lista");
         return list.stream().sorted((t1, t2) -> Integer.parseInt(t2.getElementsByTagName("points").item(0).getTextContent()) - Integer.parseInt(t1.getElementsByTagName("points").item(0).getTextContent())).collect(Collectors.toList());
     }
 
@@ -152,7 +152,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             FileOutputStream asd = new FileOutputStream(path.toFile());
             StreamResult ujFajl = new StreamResult(asd);
             trans.transform(domForras, ujFajl);
-            logger.info("Egy új player lett hozzáadva az Players.xml fájlhoz.");
+            logger.debug("Egy új player lett hozzáadva az players.xml fájlhoz.");
 
         } catch (SAXException | IOException | TransformerException ex) {
             logger.error("SAXEception or IOException or TransfromerException");
