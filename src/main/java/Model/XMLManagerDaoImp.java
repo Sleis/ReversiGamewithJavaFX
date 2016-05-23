@@ -152,7 +152,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             FileOutputStream asd = new FileOutputStream(path.toFile());
             StreamResult ujFajl = new StreamResult(asd);
             trans.transform(domForras, ujFajl);
-            logger.debug("Egy új player lett hozzáadva az players.xml fájlhoz.");
+            logger.debug("Egy új player lett hozzáadva a players.xml fájlhoz.");
 
         } catch (SAXException | IOException | TransformerException ex) {
             logger.error("SAXEception or IOException or TransfromerException");
