@@ -78,13 +78,12 @@ public class EndoftheGameController implements Initializable {
         if (!p.toFile().isFile()) {
             Path dir = Paths.get(System.getProperty("user.home"), "Documents", "Reversi");
             dir.toFile().mkdirs();
-            manager.createPlayers(p);
-            System.out.println("File: " + p.toFile().isFile());
+            manager.create(p);
         }
 
         if (!TextFieldName.getText().isEmpty()) {
             Player player = new Player(TextFieldName.getText(), Integer.parseInt(labelPoints.getText()));
-            manager.addNewPlayer(p, player);
+            manager.add(p, player);
             Stage stage = (Stage) buttonOK.getScene().getWindow();
             stage.close();
         }

@@ -93,10 +93,10 @@ public class HighScoreController implements Initializable {
         if (!p.toFile().isFile()) {
             Path dir = Paths.get(System.getProperty("user.home"), "Documents", "Reversi");
             dir.toFile().mkdirs();
-            manager.createPlayers(p);
+            manager.create(p);
         }
-        List<Element> playerlist = manager.readPlayers(p);
-        playerlist = manager.sortPlayersByScore(playerlist);
+        List<Element> playerlist = manager.read(p);
+        playerlist = manager.sortByScore(playerlist);
         Label tmp;
         int howMany = 0;
         if (playerlist.size() < 8) {

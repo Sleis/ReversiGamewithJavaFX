@@ -62,7 +62,7 @@ public class XMLManagerDaoImpTest {
     @Test
     public void testCreatePlayers() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
-        instance.createPlayers(p);
+        instance.create(p);
         assertTrue(p.toFile().isFile());
 
     }
@@ -73,10 +73,10 @@ public class XMLManagerDaoImpTest {
     @Test
     public void testReadPlayers() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
-        instance.createPlayers(p);
+        instance.create(p);
         Player test = new Player("Dani", 10);
-        instance.addNewPlayer(p, test);
-        List<Element> list = instance.readPlayers(p);
+        instance.add(p, test);
+        List<Element> list = instance.read(p);
         test.setName("Dani");
         test.setPoints(10);
         test.setDate(LocalDate.parse(list.get(0).getElementsByTagName("date").item(0).getTextContent()));
@@ -91,15 +91,15 @@ public class XMLManagerDaoImpTest {
     @Test
     public void testSortPlayersByScore() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
-        instance.createPlayers(p);
+        instance.create(p);
         Player test1 = new Player("Dani", 10);
         Player test2 = new Player("Pisti", 8);
         Player test3 = new Player("Gábor", 12);
-        instance.addNewPlayer(p, test1);
-        instance.addNewPlayer(p, test2);
-        instance.addNewPlayer(p, test3);
-        List<Element> list = instance.readPlayers(p);
-        list = instance.sortPlayersByScore(list);
+        instance.add(p, test1);
+        instance.add(p, test2);
+        instance.add(p, test3);
+        List<Element> list = instance.read(p);
+        list = instance.sortByScore(list);
         assertEquals("Gábor", list.get(0).getElementsByTagName("name").item(0).getTextContent());
         assertEquals(12, Integer.parseInt(list.get(0).getElementsByTagName("points").item(0).getTextContent()));
         File file = new File(p.toString());

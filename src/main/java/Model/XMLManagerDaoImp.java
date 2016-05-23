@@ -69,7 +69,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
      * {@inheritDoc}
      */
     @Override
-    public void createPlayers(Path path) {
+    public void create(Path path) {
         try {
             Document doc = builder.newDocument();
             Element gyoker = doc.createElement("players");
@@ -91,7 +91,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
      * {@inheritDoc}
      */
     @Override
-    public List<Element> readPlayers(Path path) {
+    public List<Element> read(Path path) {
         try {
             File file = path.toFile();
             Document doc = builder.parse(file);
@@ -114,7 +114,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
      * {@inheritDoc}
      */
     @Override
-    public List<Element> sortPlayersByScore(List<Element> list) {
+    public List<Element> sortByScore(List<Element> list) {
         logger.debug("Sorba lett rendezve a lista");
         return list.stream().sorted((t1, t2) -> Integer.parseInt(t2.getElementsByTagName("points").item(0).getTextContent()) - Integer.parseInt(t1.getElementsByTagName("points").item(0).getTextContent())).collect(Collectors.toList());
     }
@@ -123,7 +123,7 @@ public class XMLManagerDaoImp implements XMLManagerDao {
      * {@inheritDoc}
      */
     @Override
-    public void addNewPlayer(Path path, Player gamer) {
+    public void add(Path path, Player gamer) {
         try {
             Document doc;
             Element gyoker;

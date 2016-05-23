@@ -37,7 +37,7 @@ public interface XMLManagerDao {
      *
      * @param path az útvonal, ahol létrehozzuk az XML fájlt
      */
-    public void createPlayers(Path path);
+    public void create(Path path);
 
     /**
      * Visszaadja a listát, ami az XML fájlban lévő adatokat tartalmazza.
@@ -46,7 +46,7 @@ public interface XMLManagerDao {
      *
      * @return egy lista, ami az XML fájlból kiolvasott adatokat tartalmazza
      */
-    public List<Element> readPlayers(Path path);
+    public List<Element> read(Path path);
 
     /**
      * Visszaad egy listát, amiben a <code>lista</code> elemei rendezve vannak
@@ -57,7 +57,7 @@ public interface XMLManagerDao {
      * @return egy lista amiben a <code>lista</code> elemei rendezve vannak
      * pontszám szerint
      */
-    public List<Element> sortPlayersByScore(List<Element> lista);
+    public List<Element> sortByScore(List<Element> lista);
 
     /**
      * Hozzáad egy új játékost az XML fájlhoz.
@@ -66,6 +66,6 @@ public interface XMLManagerDao {
      *
      * @param jatekos a játékos adatai, amit az XML fájlhoz adunk
      */
-    public void addNewPlayer(Path path, Player jatekos);
+    public void add(Path path, Player jatekos);
 
 }
