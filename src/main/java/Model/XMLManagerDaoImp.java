@@ -146,10 +146,10 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             root = doc.getDocumentElement();
 
             Element player = doc.createElement("player");
-            Element point = doc.createElement("points");
-            point.appendChild(doc.createTextNode(Integer.toString(gamer.getPoints())));
             Element name = doc.createElement("name");
             name.appendChild(doc.createTextNode(gamer.getName()));
+            Element point = doc.createElement("points");
+            point.appendChild(doc.createTextNode(Integer.toString(gamer.getPoints())));
             Element date = doc.createElement("date");
             date.appendChild(doc.createTextNode(gamer.getLocalDate().toString()));
 
