@@ -161,10 +161,10 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             TransformerFactory tFact = TransformerFactory.newInstance();
             Transformer trans = tFact.newTransformer();
             DOMSource domSource = new DOMSource(doc);
-            FileOutputStream asd = new FileOutputStream(path.toFile());
-            StreamResult newFile = new StreamResult(asd);
+            FileOutputStream outPut = new FileOutputStream(path.toFile());
+            StreamResult newFile = new StreamResult(outPut);
             trans.transform(domSource, newFile);
-            logger.debug("Egy új player lett hozzáadva a players.xml fájlhoz.");
+            logger.debug("Egy új player lett hozzáadva a jatekos.xml fájlhoz.");
 
         } catch (SAXException | IOException | TransformerException ex) {
             logger.error("SAXEception or IOException or TransfromerException");
