@@ -92,6 +92,7 @@
                             <goal>exec</goal>                            
                         </goals>
                         <configuration>
+                            <mainClass>Controllers.MainApp</mainClass>
                             <executable>${java.home}/bin/java</executable>
                             <commandlineArgs>${runfx.args}</commandlineArgs>
                         </configuration>
