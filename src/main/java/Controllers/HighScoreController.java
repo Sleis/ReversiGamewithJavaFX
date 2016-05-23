@@ -89,7 +89,7 @@ public class HighScoreController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "players.xml");
+        Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "jatekos.xml");
         if (!p.toFile().isFile()) {
             Path dir = Paths.get(System.getProperty("user.home"), "Documents", "Reversi");
             dir.toFile().mkdirs();
