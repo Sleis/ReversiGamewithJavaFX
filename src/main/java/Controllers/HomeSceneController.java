@@ -58,7 +58,7 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handlePlayGame(ActionEvent event) throws IOException {
-        logger.info("Rákatintottál a Play gombra.");
+        logger.trace("Rákatintottál a Play gombra.");
 
         Stage stage;
         Parent root;
@@ -73,7 +73,7 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handleHighscore(ActionEvent event) throws IOException {
-        logger.info("Rákatintottál a HighScore gombra.");
+        logger.trace("Rákatintottál a HighScore gombra.");
 
         Stage stage;
         Parent root;
@@ -88,7 +88,7 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handleHelp(ActionEvent event) throws IOException {
-        logger.info("Rákatintottál a Help gombra.");
+        logger.trace("Rákatintottál a Help gombra.");
 
         Stage stage;
         Parent root;
@@ -103,7 +103,7 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handleQuit(ActionEvent event) {
-        logger.info("Rákatintottál a Quit gombra.");
+        logger.trace("Rákatintottál a Quit gombra.");
 
         Stage stage = (Stage) quit.getScene().getWindow();
 

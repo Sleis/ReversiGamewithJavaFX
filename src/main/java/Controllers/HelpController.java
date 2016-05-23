@@ -51,7 +51,7 @@ public class HelpController implements Initializable {
 
     @FXML
     private void handleBackHelp(ActionEvent event) throws IOException {
-        logger.info("Rákatintottál a Back gombra.");
+        logger.trace("Rákatintottál a Back gombra.");
 
         Stage stage;
         Parent root;

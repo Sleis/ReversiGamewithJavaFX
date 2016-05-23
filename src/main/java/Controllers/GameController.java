@@ -21,7 +21,6 @@ package Controllers;
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-
 import Model.Cell;
 import Model.Position;
 import Model.ReversiEngine;
@@ -286,11 +285,18 @@ public class GameController implements Initializable {
                     tmp[i][j] = new Cell("");
                 } else if (allStackPane[i][j].getChildren().get(0).getStyle().equals("-fx-fill: white;")) {
                     tmp[i][j] = new Cell("white");
+                    if (tmp[i][j].getColor().equals("white")) {
+                        logger.warn("Hibás szin lett feltöltve a cellába!");
+                    }
                 } else {
                     tmp[i][j] = new Cell("black");
+                    if (tmp[i][j].getColor().equals("black")) {
+                        logger.warn("Hibás szin lett feltöltve a cellába!");
+                    }
                 }
             }
         }
+        logger.info("A Cell tömb feltöltve a StackPane tömb szerint.");
         return tmp;
     }
 
@@ -345,11 +351,13 @@ public class GameController implements Initializable {
                 }
             }
         }
+        logger.info("A StackPane tömb feltöltve a Cell tömb szerint.");
+
     }
 
     @FXML
     private void handleClickAction(MouseEvent event) throws IOException {
-        logger.info("Klikkeltél egy cellára.");
+        logger.trace("Klikkeltél egy cellára.");
 
         StackPane osszes[][];
         Cell[][] all;
@@ -397,15 +405,17 @@ public class GameController implements Initializable {
         whiteNumber.setText(Integer.toString(reversiEngine.getBlackAndWhite()[0]));
         if (reversiEngine.getNextPlayer() % 2 == 0) {
             whosNext.setText("White");
+            logger.info("Köveketkező játékos szine beálítva.");
         } else {
             whosNext.setText("Black");
+            logger.info("Köveketkező játékos szine beálítva.");
         }
 
     }
 
     @FXML
     private void handleMenuGame(ActionEvent event) throws IOException {
-        logger.info("Rákattintottál a Menu gombra.");
+        logger.trace("Rákattintottál a Menu gombra.");
         Stage stage;
         Parent root;
         stage = (Stage) buttonMenuGame.getScene().getWindow();

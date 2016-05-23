@@ -72,7 +72,7 @@ public class EndoftheGameController implements Initializable {
 
     @FXML
     private void handleOK(ActionEvent event) throws IOException {
-        logger.info("Rákatintottál az OK gombra.");
+        logger.trace("Rákatintottál az OK gombra.");
 
         Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "jatekos.xml");
         if (!p.toFile().isFile()) {
@@ -100,7 +100,7 @@ public class EndoftheGameController implements Initializable {
 
     @FXML
     private void handleMenu(ActionEvent event) throws IOException {
-        logger.info("Rákatintottál a Menü gombra.");
+        logger.trace("Rákatintottál a Menü gombra.");
 
         Stage stage;
         Parent root;
