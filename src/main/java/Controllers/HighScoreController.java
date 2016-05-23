@@ -73,7 +73,7 @@ public class HighScoreController implements Initializable {
 
     @FXML
     private void handleBack(ActionEvent event) throws IOException {
-        logger.trace("Rákatintottál a Back gombra.");
+        logger.info("Rákatintottál a Back gombra.");
 
         Stage stage;
         Parent root;
@@ -88,7 +88,7 @@ public class HighScoreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        logger.debug("Inicializálás lefutott.");
         Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "jatekos.xml");
         if (!p.toFile().isFile()) {
             Path dir = Paths.get(System.getProperty("user.home"), "Documents", "Reversi");

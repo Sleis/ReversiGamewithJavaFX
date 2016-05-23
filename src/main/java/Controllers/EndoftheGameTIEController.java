@@ -55,7 +55,7 @@ public class EndoftheGameTIEController implements Initializable {
 
     @FXML
     private void handleMenu(ActionEvent event) throws IOException {
-        logger.trace("Rákatintottál a Menu gombra.");
+        logger.info("Rákatintottál a Menu gombra.");
 
         Stage stage;
         Parent root;

@@ -296,7 +296,7 @@ public class GameController implements Initializable {
                 }
             }
         }
-        logger.info("A Cell tömb feltöltve a StackPane tömb szerint.");
+        logger.trace("A Cell tömb feltöltve a StackPane tömb szerint.");
         return tmp;
     }
 
@@ -351,13 +351,13 @@ public class GameController implements Initializable {
                 }
             }
         }
-        logger.info("A StackPane tömb feltöltve a Cell tömb szerint.");
+        logger.trace("A StackPane tömb feltöltve a Cell tömb szerint.");
 
     }
 
     @FXML
     private void handleClickAction(MouseEvent event) throws IOException {
-        logger.trace("Klikkeltél egy cellára.");
+        logger.info("Klikkeltél egy cellára.");
 
         StackPane osszes[][];
         Cell[][] all;
@@ -405,17 +405,17 @@ public class GameController implements Initializable {
         whiteNumber.setText(Integer.toString(reversiEngine.getBlackAndWhite()[0]));
         if (reversiEngine.getNextPlayer() % 2 == 0) {
             whosNext.setText("White");
-            logger.info("Köveketkező játékos szine beálítva.");
+            logger.trace("Köveketkező játékos szine beálítva.");
         } else {
             whosNext.setText("Black");
-            logger.info("Köveketkező játékos szine beálítva.");
+            logger.trace("Köveketkező játékos szine beálítva.");
         }
 
     }
 
     @FXML
     private void handleMenuGame(ActionEvent event) throws IOException {
-        logger.trace("Rákattintottál a Menu gombra.");
+        logger.info("Rákattintottál a Menu gombra.");
         Stage stage;
         Parent root;
         stage = (Stage) buttonMenuGame.getScene().getWindow();
