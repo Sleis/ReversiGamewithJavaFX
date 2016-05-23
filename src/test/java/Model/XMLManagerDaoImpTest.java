@@ -60,7 +60,7 @@ public class XMLManagerDaoImpTest {
      * Test of createPlayers method, of class XMLManagerDaoImp.
      */
     @Test
-    public void testCreatePlayers() {
+    public void testCreate() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
         instance.create(p);
         assertTrue(p.toFile().isFile());
@@ -71,7 +71,7 @@ public class XMLManagerDaoImpTest {
      * Test of readPlayers method, of class XMLManagerDaoImp.
      */
     @Test
-    public void testReadPlayers() {
+    public void testRead() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
         instance.create(p);
         Player test = new Player("Dani", 10);
@@ -89,7 +89,7 @@ public class XMLManagerDaoImpTest {
      * Test of sortPlayersByScore method, of class XMLManagerDaoImp.
      */
     @Test
-    public void testSortPlayersByScore() {
+    public void testSortByScore() {
         Path p = Paths.get(tempFolder.getRoot().getPath(), "players.xml");
         instance.create(p);
         Player test1 = new Player("Dani", 10);
