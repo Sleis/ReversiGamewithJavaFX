@@ -72,14 +72,14 @@ public class XMLManagerDaoImp implements XMLManagerDao {
     public void create(Path path) {
         try {
             Document doc = builder.newDocument();
-            Element gyoker = doc.createElement("players");
-            doc.appendChild(gyoker);
+            Element root = doc.createElement("players");
+            doc.appendChild(root);
 
-            TransformerFactory tFact = TransformerFactory.newInstance();
-            Transformer trans = tFact.newTransformer();
-            DOMSource domForras = new DOMSource(doc);
-            StreamResult ujFajl = new StreamResult(path.toFile());
-            trans.transform(domForras, ujFajl);
+            TransformerFactory tFactory = TransformerFactory.newInstance();
+            Transformer trans = tFactory.newTransformer();
+            DOMSource domSource = new DOMSource(doc);
+            StreamResult newFile = new StreamResult(path.toFile());
+            trans.transform(domSource, newFile);
 
         } catch (TransformerException ex) {
             logger.error("TransformerException");
@@ -96,12 +96,12 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             File file = path.toFile();
             Document doc = builder.parse(file);
             NodeList nodeLista = doc.getElementsByTagName("player");
-            List<Element> elemek = new ArrayList<>();
+            List<Element> elements = new ArrayList<>();
             for (int i = 0; i < nodeLista.getLength(); i++) {
-                elemek.add((Element) nodeLista.item(i));
+                elements.add((Element) nodeLista.item(i));
             }
             logger.debug("Ki lett olvasva az összes elem az XML fájlból");
-            return elemek;
+            return elements;
 
         } catch (SAXException | IOException ex) {
             logger.error("SAXEception or IOException");
@@ -116,7 +116,20 @@ public class XMLManagerDaoImp implements XMLManagerDao {
     @Override
     public List<Element> sortByScore(List<Element> list) {
         logger.debug("Sorba lett rendezve a lista");
-        return list.stream().sorted((t1, t2) -> Integer.parseInt(t2.getElementsByTagName("points").item(0).getTextContent()) - Integer.parseInt(t1.getElementsByTagName("points").item(0).getTextContent())).collect(Collectors.toList());
+        int index = 0;
+        for (int i = 0; i < list.size(); i++) {
+            Element max = list.get(i);
+            for (int j = i + 1; j < list.size(); j++) {
+                if (Integer.parseInt(max.getElementsByTagName("points").item(0).getTextContent()) < Integer.parseInt(list.get(j).getElementsByTagName("points").item(0).getTextContent())) {
+                    max = list.get(j);
+                    index = j;
+                }
+            }
+            Element seged = list.get(i);
+            list.set(i, max);
+            list.set(index, seged);
+        }
+        return list;
     }
 
     /**
@@ -126,12 +139,12 @@ public class XMLManagerDaoImp implements XMLManagerDao {
     public void add(Path path, Player gamer) {
         try {
             Document doc;
-            Element gyoker;
+            Element root;
 
             File file = path.toFile();
 
             doc = builder.parse(file);
-            gyoker = doc.getDocumentElement();
+            root = doc.getDocumentElement();
 
             Element player = doc.createElement("player");
             Element point = doc.createElement("points");
@@ -144,14 +157,14 @@ public class XMLManagerDaoImp implements XMLManagerDao {
             player.appendChild(name);
             player.appendChild(point);
             player.appendChild(date);
-            gyoker.appendChild(player);
+            root.appendChild(player);
 
             TransformerFactory tFact = TransformerFactory.newInstance();
             Transformer trans = tFact.newTransformer();
-            DOMSource domForras = new DOMSource(doc);
+            DOMSource domSource = new DOMSource(doc);
             FileOutputStream asd = new FileOutputStream(path.toFile());
-            StreamResult ujFajl = new StreamResult(asd);
-            trans.transform(domForras, ujFajl);
+            StreamResult newFile = new StreamResult(asd);
+            trans.transform(domSource, newFile);
             logger.debug("Egy új player lett hozzáadva a players.xml fájlhoz.");
 
         } catch (SAXException | IOException | TransformerException ex) {
