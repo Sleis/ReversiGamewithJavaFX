@@ -675,8 +675,8 @@ public class ReversiEngine {
      * szinű kör van
      * @param index a pozició, ahova akarjuk rakni a körünket
      * @param color a soron következő játékos és az ellenfél szine
-     * @param isCheck csak ellenörzés, hogy van-e szabad lépés vagy normális
-     * játék, ahol változtatunk a játékban
+     * @param isCheck megmondja, hogy ellenörzünk vagy szinváltást is fogunk
+     * végezni
      * @return igaz, ha szabályos lépés oda rakni, egyébként hamis
      */
     public boolean[] checkallway(Cell[][] all, Position index, PlayerColor color, boolean isCheck) {
@@ -734,7 +734,7 @@ public class ReversiEngine {
     }
 
     /**
-     * Leellenörzi, hogy a játéknak vége van-e az alpaján, hogy tele van-e a
+     * Leellenörzi, hogy a játéknak vége van-e az alapján, hogy tele van-e a
      * tábla vagy van-e még szabályos lépés. A szabályos lépés ellenörzése a {@link ReversiEngine#checkallway(Model.Cell[][], Model.Position, Model.PlayerColor, boolean)
      * } metódus segítségével történik. Összesen 64 hely van, végig megyünk az
      * összes cellán, ha az adott cellában van kör vagy az adott helyre nem
@@ -783,7 +783,7 @@ public class ReversiEngine {
      * Beállítja a <code>color</code> paramétert, hogy a soron következő
      * játékosnak mi a szine és az ellenfélnek mi a szine.
      *
-     * @param color amine a szinét állítjuk át
+     * @param color aminek a tulajdonságait állítjuk át
      * @param whoNext megadja, hogy ki a következő
      */
     public void colorOption(PlayerColor color, int whoNext) {
@@ -884,14 +884,14 @@ public class ReversiEngine {
     }
 
     /**
-     * A játék menetét hajtja végre. Elsőnek kiszámolja, ki a következő játékos
+     * A játék menetét hajtja végre. Elsőnek kiszámolja,hogy ki a következő játékos
      * a {@link ReversiEngine#whosNext(Model.Cell[][])} metódussal. Megnézi,
      * hogy a <code>index</code> pozícióban van-e kör, ha van akkor beállítja
      * {@link ReversiEngine#message} tulajdonságot, hogy a hely foglalt.Ha nem
-     * foglalt, akkor beállítja a <code>color</code> változót a megfelelően a {@link ReversiEngine#colorOption(Model.PlayerColor, int)
+     * foglalt, akkor beállítja a <code>color</code> változót megfelelően a {@link ReversiEngine#colorOption(Model.PlayerColor, int)
      * } metódus segítségével. Azután leellenörzi, hogy szabályos lépés-e oda
-     * rakni a kört. Ha szabályos akkor, berakja az soron következő játékos
-     * szinével megegyező kört az <code>index</code> poícióba. Ha nem szabályos
+     * rakni a kört. Ha szabályos akkor, berakja a soron következő játékos
+     * szinével megegyező kört az <code>index</code> pozícióba. Ha nem szabályos
      * lépés oda rakni, akkor a {@link ReversiEngine#message} tulajdonságot
      * beállítja, hogy oda nem lehet rakni. Majd beállítja a
      * <code>otherColor</code> változót a megfelelően a {@link ReversiEngine#colorOption(Model.PlayerColor, int)
