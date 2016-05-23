@@ -47,7 +47,7 @@
     
     
     
-    <root level="debug">
+    <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE1"/>
     </root>
