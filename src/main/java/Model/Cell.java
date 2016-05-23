@@ -24,7 +24,7 @@ package Model;
 
 
 /**
- * A cellák típúsának osztálya
+ * A cellák tulajdonságiat tartalmazó osztály.
  *
  * @author Iványi Dániel
  */

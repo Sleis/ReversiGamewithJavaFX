@@ -33,7 +33,7 @@ import org.w3c.dom.Element;
 public interface XMLManagerDao {
 
     /**
-     * Létrehozza a <code>path</code> útvonalon a players.xml fájlt.
+     * Létrehozza a <code>path</code> útvonalon a jatekos.xml fájlt.
      *
      * @param path az útvonal, ahol létrehozzuk az XML fájlt
      */
