@@ -74,7 +74,7 @@ public class EndoftheGameController implements Initializable {
     private void handleOK(ActionEvent event) throws IOException {
         logger.info("Rákatintottál az OK gombra.");
 
-        Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "players.xml");
+        Path p = Paths.get(System.getProperty("user.home"), "Documents", "Reversi", "jatekos.xml");
         if (!p.toFile().isFile()) {
             Path dir = Paths.get(System.getProperty("user.home"), "Documents", "Reversi");
             dir.toFile().mkdirs();
