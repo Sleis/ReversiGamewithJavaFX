@@ -31,6 +31,11 @@
     <scm>
         <url>https://github.com/Sleis/ReversiGamewithJavaFX</url>
     </scm>
+    <scm>
+		<developerConnection>scm:git:https://github.com/Sleis/ReversiGamewithJavaFX</developerConnection>
+		<connection>scm:git:https://github.com/Sleis/ReversiGamewithJavaFX</connection>
+		<url>https://github.com/Sleis/ReversiGamewithJavaFX</url>
+	</scm>
     <licenses>
         <license>
             <name>gpl_v3</name>
